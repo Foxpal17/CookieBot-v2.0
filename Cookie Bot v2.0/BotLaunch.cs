@@ -39,6 +39,7 @@ namespace Cookie_Bot_v2._0
             github.gh();
             kekpepe.kek();
             Purge.purgecommand();
+            ChatAiSoon_maybe_.chatAI();
             
 
             commands.CreateCommand("Test")

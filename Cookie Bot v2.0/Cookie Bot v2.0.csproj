@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BotLaunch.cs" />
+    <Compile Include="ChatAiSoon%28maybe%29.cs" />
     <Compile Include="github.cs" />
     <Compile Include="kekpepe.cs" />
     <Compile Include="Program.cs" />
