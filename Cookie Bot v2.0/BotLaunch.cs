@@ -38,6 +38,7 @@ namespace Cookie_Bot_v2._0
             TextToSpeech.tts();
             github.gh();
             kekpepe.kek();
+            Purge.purgecommand();
             
 
             commands.CreateCommand("Test")

@@ -11,30 +11,30 @@ namespace Cookie_Bot_v2._0
 {
     public class RoastingCommand
     {
-        Random rnd2;
-        string[] roast;
-
-        public void roasting1()
-        {
-            rnd2 = new Random();
-            roast = File.ReadAllLines("roasts.txt");
-        }
-
         public void RoastCommand()
         {
-                BotLaunch.commands.CreateCommand("roast")
+            Random rnd2;
+            string[] roast;
+            
+            rnd2 = new Random();
+            roast = File.ReadAllLines("roasts.txt");
+
+            BotLaunch.commands.CreateCommand("roast")
                     .Description("Roasts a chosen user")
-                    .Parameter("roasting", ParameterType.Required)
+                    .Parameter("roasting", ParameterType.Required | ParameterType.Unparsed)
                     .Do(async (e) =>
                     {
-                        /*
                         string whotoroast = e.GetArg("roasting");
-
-                        int roast1 = rnd2.Next(roast.Length);
-                        string roast2 = roast[roast1];
-                        await e.Channel.SendMessage(whotoroast + ", " + roast2);
-                        */
-                        await e.Channel.SendMessage(":warning: **| Don't worry, " + e.User.Name + ", this command will be finished soon.**");
+                        if (e.Message.IsMentioningMe(true))
+                        {
+                            await e.Channel.SendMessage("I bet you thought you were funny with that one.");
+                        }
+                        else
+                        {
+                            int roast1 = rnd2.Next(roast.Length);
+                            string roast2 = roast[roast1];
+                            await e.Channel.SendMessage(whotoroast + ", " + roast2);
+                        }
              });        
         }
     }
