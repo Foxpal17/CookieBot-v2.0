@@ -17,6 +17,11 @@ namespace Cookie_Bot_v2._0
                 {
                     string tts = e.GetArg("text");
                     await e.Channel.SendTTSMessage(tts);
+                    await e.Channel.SendMessage("-" + e.User.Name + ", 2017");
+                    Discord.Message[] messagesToDelete;
+                    string messagesdelet = ("1");
+                    messagesToDelete = await e.Channel.DownloadMessages(Convert.ToInt16(messagesdelet));
+                    await e.Channel.DeleteMessages(messagesToDelete);
                 });
         }
     }

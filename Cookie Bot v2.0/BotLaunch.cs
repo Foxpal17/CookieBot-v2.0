@@ -36,7 +36,8 @@ namespace Cookie_Bot_v2._0
             roast.RoastCommand();
             Shutdown.ShutdownCommand();
             TextToSpeech.tts();
-
+            github.gh();
+            kekpepe.kek();
             
 
             commands.CreateCommand("Test")
@@ -50,7 +51,7 @@ namespace Cookie_Bot_v2._0
             {              
                     try
                     {
-                        await DiscordClient.Connect("MjMzODI4NjQzNDU1ODkzNTA0.CtwKIA.2dzydfK32P74pj4k_3eZuaaX-V0", TokenType.Bot);
+                        await DiscordClient.Connect("", TokenType.Bot);
                         Game g = new Game("Dev Simulator", GameType.Twitch, "http://twitch.tv/thezuccnation");
                         DiscordClient.SetGame(g);
                     }
