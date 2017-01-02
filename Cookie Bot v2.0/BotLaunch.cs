@@ -53,7 +53,7 @@ namespace Cookie_Bot_v2._0
             {              
                     try
                     {
-                        await DiscordClient.Connect("", TokenType.Bot);
+                        
                         Game g = new Game("Dev Simulator", GameType.Twitch, "http://twitch.tv/thezuccnation");
                         DiscordClient.SetGame(g);
                     }
