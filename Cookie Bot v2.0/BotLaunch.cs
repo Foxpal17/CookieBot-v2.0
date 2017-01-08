@@ -40,6 +40,7 @@ namespace Cookie_Bot_v2._0
             kekpepe.kek();
             Purge.purgecommand();
             ChatAiSoon_maybe_.chatAI();
+            log.logg();
             
 
             commands.CreateCommand("Test")
@@ -53,8 +54,8 @@ namespace Cookie_Bot_v2._0
             {              
                     try
                     {
-                        
-                        Game g = new Game("Dev Simulator", GameType.Twitch, "http://twitch.tv/thezuccnation");
+                    await DiscordClient.Connect("-", TokenType.Bot);
+                    Game g = new Game("Dev Simulator", GameType.Twitch, "http://twitch.tv/thezuccnation");
                         DiscordClient.SetGame(g);
                     }
                     catch
@@ -69,11 +70,10 @@ namespace Cookie_Bot_v2._0
         {
             Console.WriteLine("Command", $"{e.Command.Text} ({e.User.Name})");
         }
-
         private void Log(object sender, LogMessageEventArgs e)
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"[{e.Severity}] [{e.Source}] [{e.Message}]");
         }
-
     }
 }

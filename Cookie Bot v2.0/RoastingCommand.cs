@@ -17,7 +17,7 @@ namespace Cookie_Bot_v2._0
             string[] roast;
             
             rnd2 = new Random();
-            roast = File.ReadAllLines("roasts.txt");
+            roast = File.ReadAllLines("roasts.json");
 
             BotLaunch.commands.CreateCommand("roast")
                     .Description("Roasts a chosen user")

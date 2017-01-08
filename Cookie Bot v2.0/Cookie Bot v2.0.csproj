@@ -92,6 +92,7 @@
     <Compile Include="ChatAiSoon%28maybe%29.cs" />
     <Compile Include="github.cs" />
     <Compile Include="kekpepe.cs" />
+    <Compile Include="log.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purge.cs" />
@@ -111,9 +112,9 @@
     <Content Include="Items\kekpepe.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="roasts.txt">
+    <None Include="roasts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
