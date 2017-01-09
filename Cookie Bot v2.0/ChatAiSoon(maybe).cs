@@ -11,7 +11,7 @@ namespace Cookie_Bot_v2._0
     {
         public static void chatAI()
         {
-            
+            var session = CleverbotSession.NewSession("Her42ecmAOFYJy9r", "urRmT2HszsCQCxUsiBDQ3ZUOG0TZurGH");
 
             BotLaunch.commands.CreateCommand("cleverbot")
                 .Parameter("message", Discord.Commands.ParameterType.Required | Discord.Commands.ParameterType.Unparsed)

@@ -4,6 +4,7 @@ using Discord.Commands;
 using Discord.API;
 using Discord.Modules;
 using Discord.Commands.Permissions.Levels;
+using System.IO;
 
 namespace Cookie_Bot_v2._0
 {
@@ -54,8 +55,8 @@ namespace Cookie_Bot_v2._0
             {              
                     try
                     {
-                    await DiscordClient.Connect("-", TokenType.Bot);
-                    Game g = new Game("Dev Simulator", GameType.Twitch, "http://twitch.tv/thezuccnation");
+                    await DiscordClient.Connect("MjMzODI4NjQzNDU1ODkzNTA0.CtwKIA.2dzydfK32P74pj4k_3eZuaaX-V0", TokenType.Bot);
+                    Game g = new Game("With chat logs", GameType.Default, null);
                         DiscordClient.SetGame(g);
                     }
                     catch
@@ -73,7 +74,19 @@ namespace Cookie_Bot_v2._0
         private void Log(object sender, LogMessageEventArgs e)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"[{e.Severity}] [{e.Source}] [{e.Message}]");
+            string text = ($"[{e.Severity}] [{e.Source}] [{e.Message}]");
+            Console.WriteLine(text);
+            System.IO.Directory.CreateDirectory("C:\\users\\" + Environment.UserName + "\\Documents\\BotLogs");
+            try
+            {
+                File.AppendAllText("C:\\Users\\" + Environment.UserName + "\\Documents\\BotLogs\\DebugLog.txt", Environment.NewLine + text);
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error logging in BotLogs");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
         }
     }
 }
